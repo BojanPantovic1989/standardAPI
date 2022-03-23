@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace standardAPI.Models
 {
     [Keyless]
-    [Table("v_currencies")]
+    [Table("currencies")]
     public class FxRate
     {
         [Column("currency_code")]

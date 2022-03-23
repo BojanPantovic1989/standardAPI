@@ -39,8 +39,7 @@ namespace standardAPI
             services.AddDbContext<EfDbContext>(options =>
             {
                 var appSettings = Configuration.Get<AppSettings>();
-                //var connectionString = "server=localhost;port=3306;database=investorcondb;uid=root;password=8h48t984ht";
-                options.UseMySql(appSettings.ConnectionString, ServerVersion.AutoDetect(appSettings.ConnectionString));
+                options.UseSqlServer(appSettings.ConnectionString);
             });
             services.AddControllers();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
